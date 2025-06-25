@@ -3,14 +3,12 @@
 /*let x: number = 1;
 console.log(x)
 */
-function printId(id) {
-    console.log(`ID: ${id}`);
+function sum(a, b) {
+    if (typeof a === "number" && typeof b === "number") {
+        return a + b;
+    }
+    else {
+        return String(a) + String(b);
+    }
 }
-printId(101); // number
-printId("20"); // string
-let t = {
-    name: "ViNiT",
-    age: 21,
-    department: "Cloud operations"
-};
-console.log(t);
+sum(2, "asd");

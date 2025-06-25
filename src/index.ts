@@ -126,7 +126,7 @@ greet(user)
 
 // "TYPE" features 
 //  1. Union
-
+/*
 type StOrNum = string | number;
 
 function printId(id: StOrNum) {
@@ -135,22 +135,19 @@ function printId(id: StOrNum) {
 
 printId(101);      // number
 printId("20");     // string
-
+*/
 
 // 2. INTERSECTION
-
+/*
 type Manager = {
     name: string,
     age: number
 }
-
 type Employee = {
     name:string,
     department: string
 }
-
 type Teamlead = Manager & Employee
-
 let t: Teamlead = {
     name: "ViNiT",
     age: 21,
@@ -158,3 +155,48 @@ let t: Teamlead = {
 }
 
 console.log(t)
+*/
+
+
+//INTERESTING Problem
+//Sum of two number using type union
+/*
+type s = string | number;
+function sum(a:s, b:s){
+    return a+b;
+}
+*/
+//ISSUE => Operator '+' cannot be applied to types 's' and 's'
+//
+//Approach 2 
+//Solution
+/*
+type p = string | number 
+let a: p = 1;
+let b: p = "asp";
+let x = a+b;
+console.log(x);
+*/
+
+// it means 
+// ts can sum number + number 
+// ts can sum number + string 
+// ts can sum string + string 
+
+// but it cannot sum string | number + string | number 
+
+//approach 3 
+
+type sumInput = string | number ;
+
+function sum(a:sumInput, b:sumInput){
+    if(typeof a==="number" && typeof b==="number") {
+        return a + b ;
+    }
+    else {
+        return String(a) + String(b)
+    }
+}
+
+sum(2, "asd")
+
