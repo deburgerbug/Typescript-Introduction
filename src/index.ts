@@ -186,9 +186,8 @@ console.log(x);
 // but it cannot sum string | number + string | number 
 
 //approach 3 
-
+/*
 type sumInput = string | number ;
-
 function sum(a:sumInput, b:sumInput){
     if(typeof a==="number" && typeof b==="number") {
         return a + b ;
@@ -198,5 +197,14 @@ function sum(a:sumInput, b:sumInput){
     }
 }
 
-sum(2, "asd")
+console.log(sum(2, "asd"))
+*/
+//But this approach has lot of type checking which is itself is a problem , JS file stays the same so that's why this approach not that great , i think
 
+// last approach is using any assertion for direct operation 
+type k = string | number;
+function sum(a: any, b:any): void {
+    console.log((a as any) + (b as any));
+}
+
+//You can use above approach , but it takes the benefits of Typescript because, if you are going to use "any" there is no point using Typescript. Output can be obtained but approach is not optimal.
